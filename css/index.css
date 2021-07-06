@@ -1,0 +1,109 @@
+body{
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	text-decoration: none;
+}
+
+ul{
+    list-style-type: none;
+}
+
+/* Section Izquierda */
+
+.actualWeather{
+	height:auto;
+	background-color: #46455E;
+}
+
+.actualWeather .buttonSearch{
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+}
+
+.actualWeather a.button2{
+	padding:8px 30px;
+	border:2px solid #FFFFFF;
+	/* margin:arriba derecha abajo izquierda; */
+	margin: 20px 5px 20px 5px;
+	box-sizing: border-box;
+	text-decoration:none;
+	text-transform:uppercase;	
+	font-weight:400;
+	color:#FFFFFF;
+	text-align:center;
+	transition: ease .8s;
+}
+.actualWeather a.button2:hover{
+	border-color:#DDDDDD;
+}
+.actualWeather a.button2:active{
+	border-color:#BBBBBB;
+}
+
+.actualWeather .climaActual{
+	display: block;
+}
+
+.actualWeather .icon{
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.actualWeather .icon i{
+	font-size: 150px;
+	color: #ffffff;
+}
+
+.actualWeather .grade{
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+  	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.actualWeather .grade .grados{
+	font-size: 150px;
+	color: #ffffff;
+	/* text-shadow: 1px 0px 10px #515151; */
+}
+
+.actualWeather .grade .unidad{
+	font-size: 80px;
+	color: #DDDDDD;
+}
+
+.actualWeather .factores .factor{
+	font-size: 30px;
+	color: #DDDDDD;
+}
+
+.actualWeather .ubicacion .fecha{
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+}
+
+.actualWeather .ubicacion .fecha .dia{
+	font-size: 20px;
+	color: #DDDDDD;
+	padding-right: 10px;
+}
+
+.actualWeather .ubicacion .ubicacionLugar{
+	font-size: 20px;
+	color: #DDDDDD;	
+	font-weight:400;
+}
+
+/* Section Derecha */
+
+.detailsWeather{
+	height: auto;
+	background-color: #181723;
+}
