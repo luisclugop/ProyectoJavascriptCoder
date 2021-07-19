@@ -15,23 +15,36 @@ class Clima{
 	}
 }
 
-// Arreglos
+// Arreglos -------------------------------------
 
-// const ClimaDefinido = [];
+const ClimaDefinido = [];
 
-// let ciudadUsuario = prompt("¿Cual es tu ciudad: ?");
-// const ClimaUsuario = new Clima(ciudadUsuario, 18, "Parcialmente Nublado", "Lunes, 5 Julio");
+const fecha = new Date();
+// console.log(fechaTexto(fecha));
+
+const mañana = new Date(fecha);
+mañana.setDate(mañana.getDate() + 1);
+// console.log(fechaTexto(mañana));
+
+const pasadoMañana = new Date(mañana);
+pasadoMañana.setDate(pasadoMañana.getDate() + 1);
+// console.log(fechaTexto(pasadoMañana));
+
+// Arreglos -------------------------------------
+
+let ciudadUsuario = prompt("¿Cual es tu ciudad: ?");
+const ClimaUsuario = new Clima(ciudadUsuario, 18, "Parcialmente Nublado", fechaTexto(fecha));
 
 
-// ClimaDefinido.push(ClimaUsuario);
+ClimaDefinido.push(ClimaUsuario);
 
-// ClimaUsuario.mostrar();
+ClimaUsuario.mostrar();
 
-// ClimaDefinido.forEach(elemento => {
-// 	console.log(elemento);
-// });
+ClimaDefinido.forEach(elemento => {
+	console.log(elemento);
+});
 
-// Fecha Actual ------------
+// Fecha Actual ---------------------------------
 
 // Selector
 let fechaActual = document.getElementById("fechaActual");
@@ -58,17 +71,6 @@ function fechaTexto(fecha){
     return devolverFecha;
 }
 
-const fecha = new Date();
-// console.log(fechaTexto(fecha));
-
-const mañana = new Date(fecha);
-mañana.setDate(mañana.getDate() + 1);
-// console.log(fechaTexto(mañana));
-
-const pasadoMañana = new Date(mañana);
-pasadoMañana.setDate(pasadoMañana.getDate() + 1);
-// console.log(fechaTexto(pasadoMañana));
-
 function imprimirFecha(){
 	
 let escribirFechaAtual = document.createElement("p");
@@ -86,4 +88,4 @@ let escribirFechaPasadoMañana = document.createElement("p");
 
 imprimirFecha();
 
-// Fecha Actual ------------
+// Fecha Actual ---------------------------------
