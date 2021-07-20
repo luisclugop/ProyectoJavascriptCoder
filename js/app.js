@@ -32,24 +32,46 @@ pasadoMañana.setDate(pasadoMañana.getDate() + 1);
 
 // Arreglos -------------------------------------
 
-let ciudadUsuario = prompt("¿Cual es tu ciudad: ?");
-const ClimaUsuario = new Clima(ciudadUsuario, 18, "Parcialmente Nublado", fechaTexto(fecha));
+// Selectores------------------------------------
 
-
-ClimaDefinido.push(ClimaUsuario);
-
-ClimaUsuario.mostrar();
-
-ClimaDefinido.forEach(elemento => {
-	console.log(elemento);
-});
-
-// Fecha Actual ---------------------------------
-
-// Selector
 let fechaActual = document.getElementById("fechaActual");
 let fechaMañana = document.getElementById("fechaMañana");
 let fechaPasadoMañana = document.getElementById("fechaPasadoMañana");
+let mostrarClima = document.getElementById("mostrarClima");
+let ciudad = document.getElementById("ciudad");
+
+// Selectores------------------------------------
+
+// Funcion Guardar Datos-------------------------
+
+function guardarDatosClima(e){
+	e.preventDefault();
+
+// Selectores------------------------------------
+
+	let ciudadUsuario = document.getElementById("filtroSelect").value;
+	const ClimaUsuario = new Clima(ciudadUsuario, 18, "Parcialmente Nublado", fechaTexto(fecha));
+
+// Selectores------------------------------------
+
+	ClimaDefinido.push(ClimaUsuario);
+
+	ClimaUsuario.mostrar();
+
+	ClimaDefinido.forEach(elemento => {
+		console.log(elemento);
+	});
+
+	let escribirCiudad = document.createElement("p");
+		escribirCiudad.textContent = ciudadUsuario;
+		ciudad.appendChild(escribirCiudad);
+}
+
+mostrarClima.addEventListener("click", guardarDatosClima);
+
+// Funcion Guardar Datos-------------------------
+
+// Funcion Fecha Actual -------------------------
 
 // Funcion
 function fechaTexto(fecha){
@@ -88,4 +110,4 @@ let escribirFechaPasadoMañana = document.createElement("p");
 
 imprimirFecha();
 
-// Fecha Actual ---------------------------------
+// Funcion Fecha Actual -------------------------

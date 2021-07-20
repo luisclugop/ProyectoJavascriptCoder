@@ -19,15 +19,16 @@ ul{
 	background-color: #46455E;
 }
 
-.actualWeather .buttonSearch{
+.actualWeather .buttonSearch form{
 	display: flex;
 	align-items: center;
   	justify-content: center;
 }
 
-.actualWeather a.button2{
+.actualWeather button.button2{
 	padding:8px 30px;
 	border:2px solid #FFFFFF;
+	background-color: transparent;
 	/* margin:arriba derecha abajo izquierda; */
 	margin: 20px 5px 20px 5px;
 	box-sizing: border-box;
@@ -38,11 +39,30 @@ ul{
 	text-align:center;
 	transition: ease .8s;
 }
-.actualWeather a.button2:hover{
+.actualWeather button.button2:hover{
 	border-color:#DDDDDD;
 }
-.actualWeather a.button2:active{
+.actualWeather button.button2:active{
 	border-color:#BBBBBB;
+}
+
+.actualWeather select.button2{
+	padding:8px 10px;
+	border:2px solid #FFFFFF;
+	background-color: transparent;
+	/* margin:arriba derecha abajo izquierda; */
+	margin: 20px 5px 20px 5px;
+	box-sizing: border-box;
+	text-decoration:none;
+	text-transform:uppercase;	
+	font-weight:400;
+	color:#DDDDDD;
+	text-align:center;
+	transition: ease .8s;
+}
+
+.actualWeather select option{
+	color: #000000;
 }
 
 .actualWeather .climaActual{
@@ -50,8 +70,7 @@ ul{
 }
 
 .actualWeather .icon{
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 30px;
 }
 
 .actualWeather .icon i{
@@ -63,8 +82,8 @@ ul{
 	display: flex;
 	align-items: center;
   	justify-content: center;
-  	padding-top: 50px;
-	padding-bottom: 50px;
+  	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .actualWeather .grade .grados{
@@ -99,6 +118,7 @@ ul{
 	font-size: 20px;
 	color: #DDDDDD;	
 	font-weight:400;
+	padding-bottom: 40px;
 }
 
 /* Section Derecha */
