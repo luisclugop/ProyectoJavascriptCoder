@@ -62,9 +62,7 @@ function guardarDatosClima(e){
 		console.log(elemento);
 	});
 
-	let escribirCiudad = document.createElement("p");
-		escribirCiudad.textContent = ciudadUsuario;
-		ciudad.appendChild(escribirCiudad);
+	ciudad.textContent = ciudadUsuario;
 }
 
 mostrarClima.addEventListener("click", guardarDatosClima);
