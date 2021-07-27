@@ -21,11 +21,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-<!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
 </head>
 <body>
 
@@ -37,11 +32,17 @@
 					<form>
 						<select id="filtroSelect" class="button2">
 							<option>Escoge un Lugar: </option>
+							<option value="Aguascalientes">Aguascalientes</option>
+							<option value="Campeche">Campeche</option>
+							<option value="Mexico city">Ciudad de Mexico</option>
+							<option value="Durango">Durango</option>
+							<option value="Guanajuato">Guanajuato</option>
+							<option value="Oaxaca">Oaxaca</option>
 							<option value="Pachuca">Pachuca</option>
-							<option value="Tulancingo">Tulancingo</option>
-							<option value="Actopan">Actopan</option>
-							<option value="Ixmiquilpan">Ixmiquilpan</option>
-							<option value="Tula">Tula</option>
+							<option value="Puebla">Puebla</option>
+							<option value="Queretaro">Queretaro</option>
+							<option value="Sinaloa">Sinaloa</option>
+							<option value="Yucatan">Yucatan</option>	
 						</select>
 						<button class="btn button2" id="mostrarClima">Mostrar</button>
 					</form>
@@ -51,25 +52,26 @@
 						<i class="fas fa-cloud-sun"></i>
 					</div>
 					<div class="grade">
-						<p class="grados">18</p>
+						<p id="grados" class="grados">21</p>
 						<p class="unidad">°C</p>
 					</div>
 					<div class="factores">
-						<p class="factor">Parcialmente nublado</p>
+						<p id="factor" class="factor">Parcialmente Nublado</p>
 					</div>
 					<div class="ubicacion">
 						<div class="fecha">
 							<p class="dia" id="fechaActual"></p>
 						</div>
 						<div class="ubicacionLugar">
-							<i class="fas fa-map-marker-alt"></i>
 							<p id="ciudad"></p>
+							<i class="fas fa-map-marker-alt"></i>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-12 col-xs-12 col-sm-12 col-md-8 col-lg-9 detailsWeather">
 				<div class="container-fluid pronosticosClima">
+					<h3 class="tituloPagina">Pronóstico Siguientes días</h3>
 					<div class="row">
 						<div class="col-6">
 							<div class="card text-center">
@@ -91,13 +93,20 @@
 						</div>
 					</div>
 
-					<h3 class="tituloPagina">Pronóstico diario</h3>
+					<h3 class="tituloPagina">Pronóstico hoy</h3>
 					<div class="row">
 						<div class="col-6">
 							<div class="card text-center">
 								<div class="card-body">
-									<h5 class="tituloPronosticos">Máx. / Min.</h5>
-									<h3 class="statusPronosticos">22° / 11°</h3>
+									<div class="temperaturas">
+										<h5 class="tituloPronosticos">Máx. /</h5>
+										<h5 class="tituloPronosticos">Min.</h5>
+									</div>
+									<div class="temperaturas">
+										<h3 class="statusPronosticos" id="climaMax">22° C /</h3>
+										<h3 class="statusPronosticos" id="climaMin">11° C</h3>
+									</div>
+									
 									<i class="fas fa-temperature-low"></i>
 								</div>
 							</div>
@@ -106,7 +115,7 @@
 							<div class="card text-center">
 								<div class="card-body">
 									<h5 class="tituloPronosticos">Viento</h5>
-									<h3 class="statusPronosticos">8 km/h</h3>
+									<h3 class="statusPronosticos" id="viento">8 km/h</h3>
 									<i class="fas fa-wind"></i>
 								</div>
 							</div>
@@ -115,7 +124,7 @@
 							<div class="card text-center">
 								<div class="card-body">
 									<h5 class="tituloPronosticos">Sensación Térmica</h5>
-									<h3 class="statusPronosticos">21°</h3>
+									<h3 class="statusPronosticos" id="sensacionTermica">21° C</h3>
 									<i class="fas fa-temperature-low"></i>
 								</div>
 							</div>
@@ -124,7 +133,7 @@
 							<div class="card text-center">
 								<div class="card-body">
 									<h5 class="tituloPronosticos">Humedad</h5>
-									<h3 class="statusPronosticos">43 %</h3>
+									<h3 class="statusPronosticos" id="humedad">43 %</h3>
 									<i class="fas fa-tint"></i>
 								</div>
 							</div>
@@ -134,7 +143,11 @@
 			</div>
 		</div>
 	</div>
-	
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
 
 </body>

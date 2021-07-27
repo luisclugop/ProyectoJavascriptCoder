@@ -15,7 +15,7 @@ ul{
 /* Section Izquierda */
 
 .actualWeather{
-	height:auto;
+	height:950px;
 	background-color: #46455E;
 }
 
@@ -100,6 +100,7 @@ ul{
 .actualWeather .factores .factor{
 	font-size: 30px;
 	color: #DDDDDD;
+	text-transform: capitalize;
 }
 
 .actualWeather .ubicacion .fecha{
@@ -150,6 +151,12 @@ ul{
 	background-color: rgba(150, 150, 150, 0.2);
 	border:1px solid #FFFFFF;
 	margin-top: 30px !important;
+}
+
+.detailsWeather .pronosticosClima .card .temperaturas{
+	display: flex;
+	align-items: center;
+  	justify-content: center;
 }
 
 .detailsWeather .pronosticosClima .card .tituloPronosticos{
