@@ -7,12 +7,6 @@ class Clima{
 		this.factor = factor;
 		this.dia = dia;
 	}
-
-	// 	Metodos
-
-	mostrar(){
-		console.log(`${this.ciudad} esta en: ${this.grados} grados y ${this.factor} al día de: ${this.dia} `);
-	}
 }
 
 // Arreglos -------------------------------------
@@ -33,6 +27,9 @@ pasadoMañana.setDate(pasadoMañana.getDate() + 1);
 // Arreglos -------------------------------------
 
 // Selectores------------------------------------
+let filtroSelect = document.getElementById("filtroSelect");
+
+// let iconImgClima = document.getElementById("imagenClima");
 
 let fechaActual = document.getElementById("fechaActual");
 let fechaMañana = document.getElementById("fechaMañana");
@@ -63,17 +60,11 @@ function guardarDatosClima(e){
 	const ClimaUsuario = new Clima(ciudadUsuario, 18, "Parcialmente Nublado", fechaTexto(fecha));
 	// Url de conexion api concatenando el valor de la ciudad
 	const url = 'https://api.openweathermap.org/data/2.5/weather?q='+ciudadUsuario+'&units=metric&lang=sp&appid=509a71114c79dce7fe4e067058ed0286';
-	console.log(url);
+	// console.log(url);
 
 // Selectores------------------------------------
 
 	ClimaDefinido.push(ClimaUsuario);
-
-	ClimaUsuario.mostrar();
-
-	ClimaDefinido.forEach(elemento => {
-		console.log(elemento);
-	});
 
 	// Imprime en mi id=ciudad lo que traiga mi Valor de ciudadUsuario
 	ciudad.textContent = ciudadUsuario;
@@ -108,16 +99,28 @@ function guardarDatosClima(e){
 		viento.textContent = `${vientoClima} km/h`;
 		sensacionTer.textContent = `${Math.round(sensacionTermica)} °C`;
 		humedad.textContent = `${humedadClima} %`;
+
+		// jQuery Animación de Imagen del Clima
+
+		$(function mostrarImagen() { 
+			// console.log(iconClimaDescripcion);
+			$("#imagenClima").attr("src",`http://openweathermap.org/img/wn/${iconClimaDescripcion}@2x.png`);
+		});
 	})
 	.catch(error => alert("Nombre de la ciudad Invalido"));
 
 	// API CLIMA Openweathermap ---------------------
-
 }
 
-mostrarClima.addEventListener("click", guardarDatosClima);
+// Evento Mostrar Clima--------------------------
+
+// mostrarClima.addEventListener("click", guardarDatosClima);
+filtroSelect.addEventListener("change", guardarDatosClima);
+
+// Evento Mostrar Clima--------------------------
 
 // Funcion Guardar Datos-------------------------
+
 
 // Funcion Fecha Actual -------------------------
 

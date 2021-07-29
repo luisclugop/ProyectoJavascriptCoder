@@ -31,25 +31,34 @@
 				<div class="container buttonSearch">
 					<form>
 						<select id="filtroSelect" class="button2">
-							<option>Escoge un Lugar: </option>
+							<option selected="selected" disabled>Escoge un Lugar: </option>
 							<option value="Aguascalientes">Aguascalientes</option>
+							<option value="Buenos Aires">Buenos Aires  - ARG</option>
 							<option value="Campeche">Campeche</option>
+							<option value="Corrientes">Corrientes  - ARG</option>
 							<option value="Mexico city">Ciudad de Mexico</option>
 							<option value="Durango">Durango</option>
 							<option value="Guanajuato">Guanajuato</option>
+							<option value="La Plata">La Plata - ARG</option>
+							<option value="Lyon">Lyon - FR</option>
 							<option value="Oaxaca">Oaxaca</option>
 							<option value="Pachuca">Pachuca</option>
+							<option value="Paris">Paris - FR</option>
 							<option value="Puebla">Puebla</option>
 							<option value="Queretaro">Queretaro</option>
+							<option value="Rosario">Rosario - ARG</option>
+							<option value="Santa Fe">Santa Fe - ARG</option>
 							<option value="Sinaloa">Sinaloa</option>
+							<option value="Toulouse">Toulouse - FR</option>
 							<option value="Yucatan">Yucatan</option>	
 						</select>
-						<button class="btn button2" id="mostrarClima">Mostrar</button>
+						<!-- <button class="btn button2" id="mostrarClima">Mostrar</button> -->
 					</form>
 				</div>
 				<div class="container-fluid ClimaActual text-center">
 					<div class="icon">
-						<i class="fas fa-cloud-sun"></i>
+						<!-- <i class="fas fa-cloud-sun"></i> -->
+						<img src="/img/01d@2x.png" class="imgWeather" id="imagenClima" alt="Imagen del Clima">
 					</div>
 					<div class="grade">
 						<p id="grados" class="grados">21</p>
@@ -63,7 +72,7 @@
 							<p class="dia" id="fechaActual"></p>
 						</div>
 						<div class="ubicacionLugar">
-							<p id="ciudad"></p>
+							<p id="ciudad">Pachuca</p>
 							<i class="fas fa-map-marker-alt"></i>
 						</div>
 					</div>
@@ -129,7 +138,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-6">
+						<div class="col-6 pb-5">
 							<div class="card text-center">
 								<div class="card-body">
 									<h5 class="tituloPronosticos">Humedad</h5>
