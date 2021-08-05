@@ -27,30 +27,24 @@
 	<!-- Weather Section -->
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-3 actualWeather">
+			<div class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-3 actualWeather" id="actualWeather">
 				<div class="container buttonSearch">
 					<form>
 						<select id="filtroSelect" class="button2">
 							<option selected="selected" disabled>Escoge un Lugar: </option>
-							<option value="Aguascalientes">Aguascalientes</option>
-							<option value="Buenos Aires">Buenos Aires  - ARG</option>
-							<option value="Campeche">Campeche</option>
-							<option value="Corrientes">Corrientes  - ARG</option>
-							<option value="Mexico city">Ciudad de Mexico</option>
-							<option value="Durango">Durango</option>
-							<option value="Guanajuato">Guanajuato</option>
-							<option value="La Plata">La Plata - ARG</option>
-							<option value="Lyon">Lyon - FR</option>
-							<option value="Oaxaca">Oaxaca</option>
-							<option value="Pachuca">Pachuca</option>
-							<option value="Paris">Paris - FR</option>
-							<option value="Puebla">Puebla</option>
-							<option value="Queretaro">Queretaro</option>
-							<option value="Rosario">Rosario - ARG</option>
-							<option value="Santa Fe">Santa Fe - ARG</option>
-							<option value="Sinaloa">Sinaloa</option>
-							<option value="Toulouse">Toulouse - FR</option>
-							<option value="Yucatan">Yucatan</option>	
+							<option value='Aguascalientes,-102.300003,21.883329'>Aguascalientes</option>
+							<option value='Buenos Aires,-60.0,-36.0'>Buenos Aires  - ARG</option>
+							<option value='Catalunya,1.86768,41.820461'>Cataluña  - ESP</option>
+							<option value='Corrientes,-58.834099,-27.4806'>Corrientes  - ARG</option>
+							<option value='Mexico city,-99.127663,19.428471'>Ciudad de Mexico</option>
+							<option value='Galicia,-7.86621,42.755081'>Galicia  - ESP</option>
+							<option value='La Plata,-57.954529,-34.921452'>La Plata - ARG</option>
+							<option value='Lyon,4.84671,45.748459'>Lyon - FR</option>
+							<option value='Oaxaca,-96.716667,17.049999'>Oaxaca</option>
+							<option value='Pachuca,-98.733292,20.11697'>Pachuca</option>
+							<option value='Paris,2.3486,48.853401'>Paris - FR</option>
+							<option value='Rosario,-60.63932,-32.946819'>Rosario - ARG</option>
+							<option value='Santa Fe,-60.700001,-31.633329'>Santa Fe - ARG</option>
 						</select>
 						<!-- <button class="btn button2" id="mostrarClima">Mostrar</button> -->
 					</form>
@@ -78,16 +72,32 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-xs-12 col-sm-12 col-md-8 col-lg-9 detailsWeather">
+			<div class="col-12 col-xs-12 col-sm-12 col-md-8 col-lg-9 detailsWeather" id="detailsWeather">
 				<div class="container-fluid pronosticosClima">
-					<h3 class="tituloPagina">Pronóstico Siguientes días</h3>
+					<div class="row">
+						<div class="col-6">
+							<h3 class="tituloPagina">Pronóstico Siguientes días</h3>
+						</div>
+						<div class="col-6">
+							<button class="button2 float-right" id="btnLight">Light Mood</button>
+							<button class="button2 float-right" id="btnDark">Dark Mood</button>
+						</div>
+					</div>
+					
 					<div class="row">
 						<div class="col-6">
 							<div class="card text-center">
 								<div class="card-body">
 									<p class="tituloPronosticos" id="fechaMañana"></p>
-									<h3 class="statusPronosticos">22° / 11°</h3>
-									<i class="fas fa-cloud-sun-rain"></i>
+									<div class="temperaturas">
+										<h5 class="tituloPronosticos">Máx. /</h5>
+										<h5 class="tituloPronosticos">Min.</h5>
+									</div>
+									<div class="temperaturas">
+										<h3 class="statusPronosticos" id="tempMaxMañana">22° C /</h3>
+										<h3 class="statusPronosticos" id="tempMinMañana">11° C</h3>
+									</div>
+									<img src="/img/01d@2x.png" class="imgWeather" id="imagenClimaMañana" alt="Imagen del Clima">
 								</div>
 							</div>
 						</div>
@@ -95,8 +105,15 @@
 							<div class="card text-center">
 								<div class="card-body">
 									<p class="tituloPronosticos" id="fechaPasadoMañana"></p>
-									<h3 class="statusPronosticos">22° / 11°</h3>
-									<i class="fas fa-cloud-sun-rain"></i>
+									<div class="temperaturas">
+										<h5 class="tituloPronosticos">Máx. /</h5>
+										<h5 class="tituloPronosticos">Min.</h5>
+									</div>
+									<div class="temperaturas">
+										<h3 class="statusPronosticos" id="tempMaxPostMañana">22° C /</h3>
+										<h3 class="statusPronosticos" id="tempMinPostMañana">11° C</h3>
+									</div>
+									<img src="/img/01d@2x.png" class="imgWeather" id="imagenClimaPostMañana" alt="Imagen del Clima">
 								</div>
 							</div>
 						</div>

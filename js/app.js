@@ -46,6 +46,12 @@ let viento = document.getElementById("viento");
 let sensacionTer = document.getElementById("sensacionTermica");
 let humedad = document.getElementById("humedad");
 
+let tempMaxTomorrow = document.getElementById("tempMaxMañana");
+let tempMinTomorrow = document.getElementById("tempMinMañana");
+
+let tempMaxPostTomorrow = document.getElementById("tempMaxPostMañana");
+let tempMinPostTomorrow = document.getElementById("tempMinPostMañana");
+
 
 // Selectores------------------------------------
 
@@ -57,17 +63,25 @@ function guardarDatosClima(e){
 // Selectores------------------------------------
 
 	let ciudadUsuario = document.getElementById("filtroSelect").value;
-	const ClimaUsuario = new Clima(ciudadUsuario, 18, "Parcialmente Nublado", fechaTexto(fecha));
+	let split = ciudadUsuario.split(",");
+	let city = split[0];
+	let longitud = split[1];
+	let latitud = split[2];
+
+	// console.log(split);
+
+	// let ciudadUsuario = document.getElementById("filtroSelect").value;
+	// const ClimaUsuario = new Clima(city, 18, "Parcialmente Nublado", fechaTexto(fecha));
 	// Url de conexion api concatenando el valor de la ciudad
-	const url = 'https://api.openweathermap.org/data/2.5/weather?q='+ciudadUsuario+'&units=metric&lang=sp&appid=509a71114c79dce7fe4e067058ed0286';
+	const url = 'https://api.openweathermap.org/data/2.5/weather?q='+city+'&units=metric&lang=sp&appid=509a71114c79dce7fe4e067058ed0286';
 	// console.log(url);
 
 // Selectores------------------------------------
 
-	ClimaDefinido.push(ClimaUsuario);
+	// ClimaDefinido.push(ClimaUsuario);
 
 	// Imprime en mi id=ciudad lo que traiga mi Valor de ciudadUsuario
-	ciudad.textContent = ciudadUsuario;
+	ciudad.textContent = city;
 
 	// API CLIMA Openweathermap ---------------------
 	
@@ -75,6 +89,8 @@ function guardarDatosClima(e){
 
 	fetch(url).then(response => response.json())
 	.then(data => {
+
+		// console.log(url);
 		let nombreCiudadData = data['name'];
 		let idClima = data['id'];
 
@@ -110,6 +126,72 @@ function guardarDatosClima(e){
 	.catch(error => alert("Nombre de la ciudad Invalido"));
 
 	// API CLIMA Openweathermap ---------------------
+
+	// Resetear pagina despues de 2 minutos ---------
+
+	setTimeout(function(){
+		window.location.reload(1);
+	}, 60000);
+
+	// Resetear pagina despues de 2 minutos ---------
+
+	// Funcion Clima 7 Days -------------------------
+
+	function clima7Dias(){
+
+		const url7Days = 'https://api.openweathermap.org/data/2.5/onecall?lat='+latitud+'&lon='+longitud+'&units=metric&lang=sp&exclude=current,minutely,hourly,alerts&appid=509a71114c79dce7fe4e067058ed0286';
+
+		fetch(url7Days).then(response => response.json())
+		.then(data => {
+
+			console.log(url7Days);
+
+			let daily = data['daily'];
+			let tomorrow = data['daily'][0];
+			let tomorrowTemp = data['daily'][0]['temp'];
+			// console.log(tomorrowTemp);
+			let tomorrowTempMin = data['daily'][0]['temp']['min'];
+			// console.log(tomorrowTempMin);
+			let tomorrowTempMax = data['daily'][0]['temp']['max'];
+			// console.log(tomorrowTempMax);
+
+			let iconClimaTomorrowDescripcion = data['daily'][0]['weather'][0]['icon'];
+			// console.log(iconClimaTomorrowDescripcion);
+
+			let postTomorrowTempMin = data['daily'][1]['temp']['min'];
+			// console.log(postTomorrowTempMin);
+			let postTomorrowTempMax = data['daily'][1]['temp']['max'];
+			// console.log(postTomorrowTempMax);
+
+			let iconClimaPostTomorrowDescripcion = data['daily'][1]['weather'][0]['icon'];
+			// console.log(iconClimaPostTomorrowDescripcion);
+
+			// Imprimir los datos del clima - dependiendo de la respuesta del usuario
+
+			tempMaxTomorrow.textContent = `${Math.round(tomorrowTempMax)} °C /`;
+			tempMinTomorrow.textContent = `${Math.round(tomorrowTempMin)} °C`;
+
+			tempMaxPostTomorrow.textContent = `${Math.round(postTomorrowTempMax)} °C /`;
+			tempMinPostTomorrow.textContent = `${Math.round(postTomorrowTempMin)} °C`;
+			// Imprimir los datos del clima - dependiendo de la respuesta del usuario
+
+			$(function mostrarImagenSiguientesDias() { 
+				// console.log(iconClimaDescripcion);
+				$("#imagenClimaMañana").attr("src",`http://openweathermap.org/img/wn/${iconClimaTomorrowDescripcion}@2x.png`);
+	
+				$("#imagenClimaPostMañana").attr("src",`http://openweathermap.org/img/wn/${iconClimaPostTomorrowDescripcion}@2x.png`);
+			});
+			
+		})
+		.catch(error => alert("Nombre de la ciudad Invalido"));
+
+		// API CLIMA Openweathermap ---------------------
+
+	}
+
+	clima7Dias();
+
+	// Funcion Clima 7 Days -------------------------
 }
 
 // Evento Mostrar Clima--------------------------
@@ -120,7 +202,6 @@ filtroSelect.addEventListener("change", guardarDatosClima);
 // Evento Mostrar Clima--------------------------
 
 // Funcion Guardar Datos-------------------------
-
 
 // Funcion Fecha Actual -------------------------
 
@@ -161,3 +242,42 @@ let escribirFechaPasadoMañana = document.createElement("p");
 imprimirFecha();
 
 // Funcion Fecha Actual -------------------------
+
+// Modos Iluminación-----------------------------
+
+// Selectores------------------------------------
+
+let btnDark = document.getElementById("btnDark");
+let btnLight = document.getElementById("btnLight");
+
+// Selectores------------------------------------
+
+// Funcion Light Mood ---------------------------
+
+function cambiarModoLight(){
+	let actualWeather = document.getElementById("actualWeather");
+	actualWeather.classList.add('actualWeatherLight');
+
+	let detailsWeather = document.getElementById("detailsWeather");
+	detailsWeather.classList.add('detailsWeatherLight');
+}
+
+btnLight.addEventListener("click", cambiarModoLight);
+
+// Funcion Light Mood ---------------------------
+
+// Funcion Dark Mood ---------------------------
+
+function cambiarModoDark(){
+	let actualWeatherDark = document.getElementById("actualWeather");
+	actualWeatherDark.classList.remove('actualWeatherLight');
+
+	let detailsWeatherDark = document.getElementById("detailsWeather");
+	detailsWeatherDark.classList.remove('detailsWeatherLight');
+}
+
+btnDark.addEventListener("click", cambiarModoDark);
+
+// Funcion Dark Mood ---------------------------
+
+// Modos Iluminación-----------------------------

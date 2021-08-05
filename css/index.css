@@ -12,20 +12,7 @@ ul{
     list-style-type: none;
 }
 
-/* Section Izquierda */
-
-.actualWeather{
-	height:auto;
-	background-color: #6f6d9b;
-}
-
-.actualWeather .buttonSearch form{
-	display: flex;
-	align-items: center;
-  	justify-content: center;
-}
-
-.actualWeather button.button2{
+button.button2{
 	padding:8px 30px;
 	border:2px solid #FFFFFF;
 	background-color: transparent;
@@ -38,12 +25,30 @@ ul{
 	color:#FFFFFF;
 	text-align:center;
 	transition: ease .8s;
+	cursor: pointer;
 }
-.actualWeather button.button2:hover{
+
+button.button2:hover{
 	border-color:#DDDDDD;
 }
-.actualWeather button.button2:active{
+
+button.button2:disabled{
 	border-color:#BBBBBB;
+	opacity: .6;
+}
+
+/* Section Izquierda */
+
+.actualWeather{
+	height:auto;
+	background-color: #6f6d9b;
+	color: #ffffff;
+}
+
+.actualWeather .buttonSearch form{
+	display: flex;
+	align-items: center;
+  	justify-content: center;
 }
 
 .actualWeather select.button2{
@@ -88,19 +93,21 @@ ul{
 
 .actualWeather .grade .grados{
 	font-size: 150px;
-	color: #ffffff;
+	transition: ease .8s;
 	/* text-shadow: 1px 0px 10px #515151; */
 }
 
 .actualWeather .grade .unidad{
 	font-size: 80px;
 	color: #DDDDDD;
+	transition: ease .8s;
 }
 
 .actualWeather .factores .factor{
 	font-size: 30px;
 	color: #DDDDDD;
 	text-transform: capitalize;
+	transition: ease .8s;
 }
 
 .actualWeather .ubicacion .fecha{
@@ -113,6 +120,7 @@ ul{
 	font-size: 20px;
 	color: #DDDDDD;
 	padding-right: 10px;
+	transition: ease .8s;
 }
 
 .actualWeather .ubicacion .ubicacionLugar{
@@ -120,7 +128,33 @@ ul{
 	color: #DDDDDD;	
 	font-weight:400;
 	padding-bottom: 20px;
+	transition: ease .8s;
 }
+
+/* Light Mode */
+
+.actualWeatherLight{
+	height:auto;
+	background-color: #ade8f4;
+	color: #000000;
+}
+.actualWeatherLight select.button2{
+	color: #000000;
+}
+.actualWeatherLight .grade .unidad{
+	color: #343a40;
+}
+.actualWeatherLight .factores .factor{
+	color: #343a40;
+}
+.actualWeatherLight .ubicacion .fecha .dia{
+	color: #343a40;
+}
+.actualWeatherLight .ubicacion .ubicacionLugar{
+	color: #343a40;
+}
+
+/* Light Mode */
 
 /* Section Derecha */
 
@@ -131,6 +165,13 @@ ul{
 
 .detailsWeather .pronosticosClima{
 	padding-top: 20px;
+}
+
+.detailsWeather .pronosticosClima img{
+	height: 75px !important;
+	image-rendering: auto !important;
+	filter: drop-shadow(0 0 1px white);
+	margin-bottom: -10px;
 }
 
 .detailsWeather .pronosticoSemanal{
@@ -173,3 +214,11 @@ ul{
 	color: #DDDDDD;
 	font-size: 30px;
 }
+
+/* Light Mode */
+
+.detailsWeatherLight{
+	background-color: #012a4a;
+}
+
+/* Light Mode */
