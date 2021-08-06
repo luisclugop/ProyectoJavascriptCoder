@@ -37,6 +37,48 @@ button.button2:disabled{
 	opacity: .6;
 }
 
+@media only screen and (max-width: 600px) {
+	button.button2{
+		padding:8px 15px;
+		/* margin:arriba derecha abajo izquierda; */
+		margin: 5px 5px 5px 0;
+		font-size: 10px;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	button.button2{
+		padding:8px 15px;
+		/* margin:arriba derecha abajo izquierda; */
+		margin: 15px 5px 20px 0;
+		font-size: 12px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	button.button2{
+		padding:8px 30px;
+		/* margin:arriba derecha abajo izquierda; */
+		margin: 5px 5px 5px 5px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	button.button2{
+		padding:8px 30px;
+		/* margin:arriba derecha abajo izquierda; */
+		margin: 20px 5px 20px 5px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	button.button2{
+		padding:8px 30px;
+		/* margin:arriba derecha abajo izquierda; */
+		margin: 20px 5px 20px 5px;
+	}
+}
+
 /* Section Izquierda */
 
 .actualWeather{
@@ -186,6 +228,39 @@ button.button2:disabled{
 	font-weight:500;
 }
 
+@media only screen and (max-width: 600px) {
+	.detailsWeather .pronosticosClima .tituloPagina{
+		padding-top: 20px;
+		font-size: 20px;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.detailsWeather .pronosticosClima .tituloPagina{
+		padding-top: 20px;
+		font-size: 20px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.detailsWeather .pronosticosClima .tituloPagina{
+		padding-top: 20px;
+		font-size: 25px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.detailsWeather .pronosticosClima .tituloPagina{
+		padding-top: 20px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.detailsWeather .pronosticosClima .tituloPagina{
+		padding-top: 20px;
+	}
+}
+
 .detailsWeather .pronosticosClima .card{
 	width: 100%;
 	height: auto;
@@ -202,11 +277,71 @@ button.button2:disabled{
 
 .detailsWeather .pronosticosClima .card .tituloPronosticos{
 	color: #DDDDDD;
-	font-weight:400;
+	font-weight:500;
+}
+
+@media only screen and (max-width: 600px) {
+	.detailsWeather .pronosticosClima .card .tituloPronosticos{
+		font-size: 10px;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.detailsWeather .pronosticosClima .card .tituloPronosticos{
+		font-size: 15px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.detailsWeather .pronosticosClima .card .tituloPronosticos{
+		font-size: 15px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.detailsWeather .pronosticosClima .card .tituloPronosticos{
+		font-size: 20px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.detailsWeather .pronosticosClima .card .tituloPronosticos{
+		font-size: 20px;
+	}
 }
 
 .detailsWeather .pronosticosClima .card .statusPronosticos{
 	color: #DDDDDD;
+}
+
+@media only screen and (max-width: 600px) {
+	.detailsWeather .pronosticosClima .card .statusPronosticos{
+		font-size: 15px;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.detailsWeather .pronosticosClima .card .statusPronosticos{
+		font-size: 25px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.detailsWeather .pronosticosClima .card .statusPronosticos{
+		font-size: 25px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.detailsWeather .pronosticosClima .card .statusPronosticos{
+		font-size: 30px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.detailsWeather .pronosticosClima .card .statusPronosticos{
+		font-size: 35px;
+	}
 }
 
 .detailsWeather .pronosticosClima .card i{
@@ -222,3 +357,40 @@ button.button2:disabled{
 }
 
 /* Light Mode */
+
+
+/* Clouds */
+
+svg {
+	height: 100px;
+	width: 50%;
+	opacity: .09;
+	z-index: -1 !important;
+}
+
+path {
+	fill: #191c1f;
+	transition: ease .3s;
+}
+
+path:hover {
+	fill: #494949;
+}
+
+.cloud{
+	position: absolute;
+	top: 5%;
+	left: -120px;
+}
+.cloud2{
+	position: absolute;
+	top: 15%;
+	right: -130px;
+}
+.cloud3{
+	position: absolute;
+	top: 22%;
+	left: -120px;
+}
+
+/* Clouds */
